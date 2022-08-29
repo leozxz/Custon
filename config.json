@@ -2,74 +2,118 @@
   "workflowApiVersion": "1.1",
   "metaData": {
     "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/24/4f/3f/244f3f55-e3cf-2d9c-2b00-0bbf7d8b3199/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/60x60bb.jpg",
-    "iconSmall": "images/whatsapp.png",
+    "iconSmall": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/24/4f/3f/244f3f55-e3cf-2d9c-2b00-0bbf7d8b3199/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/60x60bb.jpg",
     "category": "message"
   },
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Send Whatsapp HSM DEV",
-      "description": "HSM template submission via WhatsApp."
+      "name": "Gerando CSV",
+      "description": "Gerando CSV."
     },
     "pt-BR": {
-      "name": "Send Whatsapp HSM DEV",
-      "description": "Envio de template HSM via WhatsApp."
+      "name": "Gerando CSV",
+      "description": "Gerando CSV."
     }
   },
   "arguments": {
     "execute": {
-      "inArguments": [],
-      "outArguments": [],
-      "url": "https://new-custom.herokuapp.com/journeybuilder/execute",
-      "verb": "POST",
-      "body": "",
-      "header": "",
-      "format": "json",
-      "useJwt": true,
-      "timeout": 10000
+      "inArguments": [
+        {
+          "Email": "{{Contact.Attribute.Custom_send.Email}}"
+        },
+          
+        {
+          "phoneNumber": "{{Contact.Attribute.Custom_send.Telefone}}"
+        },
+        {
+          "Nome": "{{Contact.Attribute.Custom_send.Nome}}"
+        },
+          
+        {
+          "Idade": "{{Contact.Attribute.Custom_send.Idade}}"
+        }
+      ],
+      "outArguments": [
+        {
+          "foundSignupDate": ""
+        }
+      ],
+      "url": "execute"
     }
   },
   "configurationArguments": {
     "applicationExtensionKey": "400c4fe4-6827-4a99-bd52-ac6f88b7c10c",
     "save": {
-      "url": "https://new-custom.herokuapp.com/journeybuilder/save",
-      "verb": "POST",
-      "useJwt": true
+      "url": "save",
+      "verb": "POST"
     },
     "publish": {
-      "url": "https://new-custom.herokuapp.com/journeybuilder/publish",
-      "verb": "POST",
-      "useJwt": true
+      "url": "publish",
+      "verb": "POST"
     },
     "validate": {
-      "url": "https://new-custom.herokuapp.com/journeybuilder/validate",
-      "verb": "POST",
-      "useJwt": true
+      "url": "validate",
+      "verb": "POST"
     },
     "stop": {
-      "url": "https://new-custom.herokuapp.com/journeybuilder/stop",
-      "verb": "POST",
-      "useJwt": true
+      "url": "stop",
+      "verb": "POST"
     }
   },
   "wizardSteps": [
-    {
-      "label": "Configure HSM Template",
-      "key": "step1"
-    }
+    { "label": "Step 1", "key": "step1" }
+
   ],
   "userInterfaces": {
     "configModal": {
       "height": 200,
-      "width": 300,
+      "width":  300,
       "fullscreen": true
     }
   },
   "schema": {
     "arguments": {
       "execute": {
-        "inArguments": [],
-        "outArguments": []
+        "inArguments": [
+          {
+            "phoneNumber": {
+              "dataType": "Phone",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "emailAddress": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "Nome": {
+              "dataType": "Text",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "Idade": {
+              "dataType": "Text",
+              "isNullable": false,
+              "direction": "in"
+            }
+          }
+        ],
+        "outArguments": [
+          {
+            "foundSignupDate": {
+              "dataType": "Date",
+              "direction": "out",
+              "access": "visible"
+            }
+          }
+        ]
       }
     }
   }
