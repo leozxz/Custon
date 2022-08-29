@@ -1,7 +1,7 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "images/whatsapp.png",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/24/4f/3f/244f3f55-e3cf-2d9c-2b00-0bbf7d8b3199/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/60x60bb.jpg",
     "iconSmall": "images/whatsapp.png",
     "category": "message"
   },
