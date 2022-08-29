@@ -1,0 +1,76 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/whatsapp.png",
+    "iconSmall": "images/whatsapp.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Send Whatsapp HSM DEV",
+      "description": "HSM template submission via WhatsApp."
+    },
+    "pt-BR": {
+      "name": "Send Whatsapp HSM DEV",
+      "description": "Envio de template HSM via WhatsApp."
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://new-custom.herokuapp.com/journeybuilder/execute",
+      "verb": "POST",
+      "body": "",
+      "header": "",
+      "format": "json",
+      "useJwt": true,
+      "timeout": 10000
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "400c4fe4-6827-4a99-bd52-ac6f88b7c10c",
+    "save": {
+      "url": "https://new-custom.herokuapp.com/journeybuilder/save",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "publish": {
+      "url": "https://new-custom.herokuapp.com/journeybuilder/publish",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "validate": {
+      "url": "https://new-custom.herokuapp.com/journeybuilder/validate",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "stop": {
+      "url": "https://new-custom.herokuapp.com/journeybuilder/stop",
+      "verb": "POST",
+      "useJwt": true
+    }
+  },
+  "wizardSteps": [
+    {
+      "label": "Configure HSM Template",
+      "key": "step1"
+    }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 200,
+      "width": 300,
+      "fullscreen": true
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [],
+        "outArguments": []
+      }
+    }
+  }
+}
