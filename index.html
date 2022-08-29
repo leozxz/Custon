@@ -5,8 +5,10 @@
     <meta charset="utf-8" />
     <title>Custom Journey Builder Activity</title>
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="require.js"></script>
+    <link rel="stylesheet" type="text/css" href="util.css">
+	  <link rel="stylesheet" type="text/css" href="main.css">
     <script type="text/javascript">
       (function () {
         var config = {
@@ -17,45 +19,43 @@
 
         require(config, dependencies);
       })();
-    </script>
-
-    <!--Styles-->
-    <style type="text/css">
-      body {
-        padding: 20px;
-        margin: 0;
-      }
-      .step {
-        display: none;
-      }
-      #step1 {
-        display: block;
-      }
-    </style>
+    </script>  
   </head>
   <body>
-    <div id="step1" class="step">
-      Select your SMS message:
-      <select id="select1">
-        <option value="">Select an option</option>
-        <option value="someMessage">Some SMS</option>
-        <option value="anotherMessage">Another SMS</option>
-        <option value="thirdMessage">Third SMS</option>
-        <option value="unknownMessage">Unknown SMS</option>
-      </select>
+    <div class="limiter">
+      <div class="container-login100">
+        <div class="wrap-login100">
+          <div class="login100-pic js-tilt" data-tilt>
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/24/4f/3f/244f3f55-e3cf-2d9c-2b00-0bbf7d8b3199/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/60x60bb.jpg" alt="IMG">
+          </div>
+    
+          <div class="login100-form validate-form">
+            <span class="login100-form-title">
+             
+              Enviando os dados 
+             
+            </span>
+  
+            <div class="wrap-input100 validate-input">
+              • Email
+            </div>
+    
+            <div class="wrap-input100 validate-input">
+              • Telefone
+            </div>
+            
+            <div class="wrap-input100 validate-input">
+              • Nome
+            </div>
+    
+            <div class="wrap-input100 validate-input">
+              • Idade
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
 
-      <button id="toggleLastStep">Toggle Last Step</button>
-    </div>
-    <div id="step2" class="step">
-      Here's a second page with some info on it.
-    </div>
-    <div id="step3" class="step">
-      You chose the message:
-      <div id="message"></div>
-    </div>
-    <div id="step4" class="step">
-      Hey, here's a fourth step, just for you. Toggle this on or off from step
-      1.
-    </div>
   </body>
 </html>
